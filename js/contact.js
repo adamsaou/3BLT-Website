@@ -9,19 +9,19 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Get form data
             const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
+                from_name: document.getElementById('name').value,
+                reply_to: document.getElementById('email').value,
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
             };
-            
+              
             // Basic validation
-            if (formData.name && formData.email && formData.subject && formData.message) {
+            if (formData.from_name && formData.reply_to && formData.subject && formData.message) {
                 // Initialize EmailJS
                 emailjs.init("2bM9HA8zToziY2Otp"); // Replace with your EmailJS user ID
                 
                 // Send email using EmailJS
-                emailjs.send("service_ooosyg8", "template_g0jc1j8", formData)
+                emailjs.send("service_g07ptup", "template_bohztvb", formData)
                     .then(function(response) {
                         console.log("SUCCESS!", response.status, response.text);
                         contactForm.reset();
